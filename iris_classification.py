@@ -17,7 +17,7 @@ categories = iris.target
 # Cross-Validation setting
 X_train, X_test, y_train, y_test = train_test_split(features, categories, test_size=0.2, random_state=42)
 cv_sets = ShuffleSplit(X_train.shape[0], n_iter = 10, test_size = 0.20, random_state = 0)
-params = {'max_depth': np.arange(2,11), 'min_samples_split': np.array([5])}
+params = {'max_depth': np.arange(2,11), 'min_samples_leaf': np.array([5])}
 
 # Learning
 def performance_metric(y_true, y_predict):
